@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    <title>UCL WINNER</title>
+</head>
+<body>
+        
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h2>Champion league</h2> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" aria-current="page" href="{% url 'HOME' %}">Rivalries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block " aria-current="page" href="{% url 'TRANSFERRUMORS' %}">Transfer Rumors</a>
+              </li>
+          
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" href="{% url 'TOP8TEAM' %}">Top 8 Teams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block " href="{% url 'FIFAPRO11' %}">Fifa Pro World 11</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" href="{% url 'GREATTESTALLTIME' %}">Greatest All the Time</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  btn btn-block" href="{% url 'UCLTOPSCORER' %}">Ucl Top Scorrer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block active" href="{% url 'UCLWINNER' %}">Ucl Winner</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" href="{% url 'TOPPREDICTORS' %}">Top Predictors</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="p-5"></div>
+
+     
+      <table class=" table  table-hover" style="background-color:#000000; color: white;" >
+        <thead>
+          <tr>
+            <th scope="col">Season</th>
+            <th scope="col">Winner</th>
+            <th scope="col">Runner Up</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in context %}
+          <tr>
+            <td>{{i.Season}}</td>
+            <td>{{i.Winner}}</td>
+            <td>{{i.RunnerUp}}</td>
+            <td>{{i.Score}}</td>
+          </tr>
+
+          {% endfor %}
+          
+        </tbody>
+      </table>
+
+     
+<script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    
+</body>
+</html>
